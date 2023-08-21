@@ -1,0 +1,270 @@
+/** @format */
+
+
+@import url("https://v1.fontapi.ir/css/VazirFD");
+
+body {
+  font-family: Vazir FD, sans-serif;
+  direction: rtl;
+  box-sizing: border-box ;
+}
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.image__container-box{
+  @apply  text-[16px] rounded-[10px] w-[170px] sm:w-[220px] h-[47px]  flex  justify-center items-center absolute -bottom-6 left-0 right-0 mx-auto 
+}
+
+.article{
+  @apply relative flex flex-col  gap-12 p-3 w-[312px]  
+   border border-black rounded-[20px] overflow-hidden mx-auto bg-[#00000006]
+}
+
+.slider-controler{
+  @apply flex justify-between items-center w-[180px] h-[40px]
+}
+
+.accordian-svg{
+  @apply sm:hidden w-[30px] h-[30px] -rotate-90
+}
+
+.footer-section{
+  @apply px-12 py-4 bg-[#526399] flex justify-center gap-5 flex-wrap sm:justify-around
+}
+
+.subscription-section{
+  @apply flex flex-col justify-center  sm:absolute  bg-[#F5F5F5E5] top-[70px] lg:left-[30px] p-8 max-w-[644px] border border-black rounded-[16px] m-2
+}
+
+.subscription-box{
+  @apply  rounded-[12px] text-[16px] text-center w-[170px] h-[47px] flex justify-center items-center
+}
+
+ .swiper {
+  width: 100%;
+  /* height: 500px !important; */
+}
+
+.slider-controler{
+  position: absolute !important;
+  right: 0 !important;
+  left: 0 !important;
+  bottom: 0 !important;
+  margin: 0 auto;
+}
+
+.swiper-button-next:after, .swiper-button-prev:after{
+  font-size: 24px !important;
+  color: black !important;
+}
+
+.swiper-pagination-bullet-active{
+  background: rgb(143, 192, 143) !important;
+}
+
+.slider-controler{
+  position: absolute !important;
+  right: 0 !important;
+  left: 0 !important;
+  bottom: 0 !important;
+}
+
+
+.accordian-content{
+  display: none;
+}
+
+.accordian.active .accordian-content{
+  display: block;
+}
+
+.accordian.active svg{
+  transform: rotate(90deg);
+  transition: all .5s ease-in-out;
+}
+
+@media screen and ( min-width : 640px) {
+  .accordian-content{
+    display: block;
+  }
+}
+
+
+
+.swiper {
+  width: 100%;
+  height: 100%;
+}
+
+.swiper-slide {
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.swiper-slide img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+
+
+/* ==============> */
+/* .thumbs.swiper {
+  width: 100%;
+  height: 300px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.thumbs .swiper-slide {
+  background-size: cover;
+  background-position: center;
+}
+
+.thumbs.mySwiper2 {
+  height: 80%;
+  width: 100%;
+}
+
+.thumbs.mySwiper3 {
+  height: 20%;
+  box-sizing: border-box;
+  padding: 10px 0;
+}
+
+.thumbs.mySwiper3 .swiper-slide {
+  width: 25%;
+  height: 100%;
+  opacity: 0.4;
+}
+
+.thumbs.mySwiper3 .swiper-slide-thumb-active {
+  opacity: 1;
+}
+
+.thumbs .swiper-slide img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+} */
+
+
+
+
+
+
+/* .tranding-slider-control {
+  position: relative;
+  bottom: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.tranding-slider-control .swiper-button-next {
+  left: 58% !important;
+  transform: translateX(-58%) !important;
+}
+
+.tranding-slider-control .slider-arrow {
+  background: var(--white);
+  width: 3.5rem;
+  height: 3.5rem;
+  border-radius: 50%;
+  left: 42%;
+  transform: translateX(-42%);
+  filter: drop-shadow(0px 8px 24px rgba(18, 28, 53, 0.1));
+}
+
+.tranding-slider-control .slider-arrow ion-icon {
+  font-size: 2rem;
+  color: #222224;
+}
+
+.tranding-slider-control .slider-arrow::after {
+  content: '';
+}
+
+.tranding-slider-control .swiper-pagination {
+  position: relative;
+  width: 15rem;
+  bottom: 1rem;
+}
+
+.tranding-slider-control .swiper-pagination .swiper-pagination-bullet {
+  filter: drop-shadow(0px 8px 24px rgba(18, 28, 53, 0.1));
+}
+
+.tranding-slider-control .swiper-pagination .swiper-pagination-bullet-active {
+  background: var(--primary);
+} */
+
+/* .swiper-slide {
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+/* } */
+
+/* .swiper-slide img {
+  display: block;
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 8px;
+  border: 1px solid gray;
+}  */
+
+/* .ham-menu {
+  height: 3rem;
+  width: 3rem;
+  padding: 0.5rem;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+} */
+
+/* .ham-menu .line { 
+  border-radius: 1em;
+  width: 2rem;
+  height: 0.25rem;
+}
+
+.ham-menu .line1 {
+  transform-origin: 0% 0%;
+  transition: transform 100ms ease-in-out;
+  
+}
+
+.ham-menu .line3 {
+  transform-origin: 0% 100%;
+  transition: transform 100ms ease-in-out;
+}
+
+.clip-path {
+  clip-path: polygon(42% 0%, 100% 0%, 100% 100%, 50% 100%); 
+}
+
+@media screen and (width < 768px) {
+  .clip-path {
+    clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%); 
+  }
+} */
+
+
+/* .sidebar-active {
+  right: 0px !important;
+} */
+
+
+/* .unest{
+  all: unset;
+} */

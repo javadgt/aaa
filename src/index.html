@@ -1,0 +1,509 @@
+<!-- @format -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+    <link rel="stylesheet" href="../dist/output.css" />
+
+    <title>Document</title>
+  </head>
+  <body>
+    <!-- mobile menu  -->
+    <div
+      class="sidebar transition-all duration-500 fixed right-[-250px] bottom-0 top-0 w-[250px] py-8 px-6 bg-slate-300 z-50 rounded-l">
+      <div class="my-4 relative">
+        <img
+          class="w-10 absolute left-0 top-1"
+          src="../assets/img/Search.svg"
+          alt="" />
+        <input
+          class="w-full p-2 rounded-md transition-all duration-300 outline-none focus-visible:outline-none focus-visible:shadow-xl"
+          placeholder="جستجو در سایت"
+          type="text" />
+      </div>
+      <nav>
+        <ul
+          class="flex flex-col b xl:hidden gap-4 items-center text-[1rem] 2xl:text-[1.1rem]">
+          <li><a href="#">صفحه اصلی</a></li>
+          <li><a href="#">خدمات آنلاین</a></li>
+          <li><a href="#">شبکه فروش</a></li>
+          <li><a href="#">خدمات</a></li>
+          <li><a href="#">خسارات</a></li>
+          <li><a href="#">تماس با ما</a></li>
+          <li><a href="#">ایمیل</a></li>
+        </ul>
+      </nav>
+    </div>
+
+    <!-- overlay -->
+    <div
+      class="overlay transition-all duration-500 fixed inset-0 bg-black/70 z-[39] invisible opacity-0"></div>
+
+    <!-- header -->
+    <header class="flex flex-col justify-between items-center text-primary">
+      <div class="flex items-center w-full px-12">
+        <div class="flex gap-20 items-center grow">
+          <div class="flex items-center gap-2">
+            <img
+              class="w-[80px] sm:w-[97px] h-[74px] sm:h-[80px]"
+              src="../assets/img/کودک من-3-06.png"
+              alt="اﯾﺮاﻧﯿﺎن ﺳﺮﻣﺎﯾﻪ و آﺳﺎﯾﺶ اﻣﯿﺪ اى ﺑﯿﻤﻪ ﺧﺪﻣﺎت ﺷﺮکﺖ" />
+            <img
+              class="w-[80px] h-[60px] sm:w-[164px] sm:h-[56px]"
+              src="../assets/img/کودک من-3-07.png"
+              alt="اﯾﺮاﻧﯿﺎن ﺳﺮﻣﺎﯾﻪ و آﺳﺎﯾﺶ اﻣﯿﺪ اى ﺑﯿﻤﻪ ﺧﺪﻣﺎت ﺷﺮکﺖ" />
+          </div>
+          <div class="grow max-w-[550px] ml-6">
+            <div class="relative">
+              <input
+                type="text"
+                class="bg-white block min-w-[450px] max-w-[550px] w-full h-[45px] outline-0 grow rounded-xl border-2 border-[00000018] px-3 py-1"
+                placeholder="مطلب مورد نظر را جستجو کنید" />
+
+              <img
+                src="../assets/img/header/search.svg"
+                class="absolute left-4 top-3 cursor-pointer" />
+            </div>
+          </div>
+        </div>
+
+        <div class="flex gap-12">
+          <span class="font-sans">0215469</span>
+          <span> دوشنبه 12 آذر 1402</span>
+          <span class="font-sans cursor-pointer">EN/ FA</span>
+        </div>
+      </div>
+
+      <nav class="flex justify-between gap-2 w-full bg-yellow-300 px-12 py-4">
+        <ul
+          class="hidden xl:flex gap-4 items-center text-[1rem] 2xl:text-[1.1rem]">
+          <li class="px-2 font-bold"><a href="#">صفحه اصلی</a></li>
+          <li class="px-2 font-bold"><a href="#">خدمات آنلاین</a></li>
+          <li class="px-2 font-bold"><a href="#">شبکه فروش</a></li>
+          <li class="px-2 font-bold"><a href="#">خدمات</a></li>
+          <li class="px-2 font-bold"><a href="#">خسارات</a></li>
+          <li class="px-2 font-bold"><a href="#">تماس با ما</a></li>
+          <li class="px-2 font-bold"><a href="#">ایمیل</a></li>
+        </ul>
+        <div class="flex gap-8 items-center">
+          <div class="flex items-center gap-2">
+            <span class="text-gray-500">ورود /</span>
+            <span class="font-bold">عضویت</span>
+          </div>
+          <div class="flex items-center gap-2">
+            <span class="text-gray-500">سبد خرید /</span>
+            <span class="font-bold">0 تومان</span>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <!-- Swiper -->
+    <div class="swiper mySwiper mySwiper0">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide !w-full h-[500px]">
+          <img
+            class="object-cover bg-center"
+            src="../assets/img/header/hero.png"
+            alt="" />
+        </div>
+        <div class="swiper-slide !w-full h-[500px]">
+          <img
+            class="object-cover bg-center"
+            src="../assets/img/header/hero.png"
+            alt="" />
+        </div>
+      </div>
+      <div class="swiper-button-next bg-white w-12 h-12 rounded-full"></div>
+      <div class="swiper-button-prev bg-white w-12 h-12 rounded-full"></div>
+    </div>
+
+    <!-- Swiper -->
+    <div class="flex flex-col justify-center items-center p-[1rem] container">
+      <div class="w-full mx-auto mt-10 flex justify-center items-center">
+        <div class="grow h-[2px] bg-[#606060]"></div>
+        <h2 class="text-3xl font-bold mx-3 text-[#606060]">خدمات بیمه اى</h2>
+        <div class="grow h-[2px] bg-[#606060]"></div>
+      </div>
+
+      <div class="swiper !h-[500px] mySwiper1 relative">
+        <div class="swiper-wrapper">
+          <!-- border-black rounded-[17px]
+ -->
+          <div class="swiper-slide">
+            <div class="article ">
+              <div class="pt-2 relative">
+                <img
+                  src="../assets//img/services/Rectangle 14.png"
+                  alt="danger"
+                  class="w-[272px] mx-auto object-cover" />
+                <div class="image__container-box bg-[#FFC700]">
+                  تغذیه در کودکان
+                </div>
+              </div>
+              <p class="text-[16px] mb-12 max-w-[223px] mx-auto">
+                ست تی شرت آستین کوتاه و شلوارک بچگانه سپیدپوش مدل ...
+              </p>
+              <span class="text-[12px] absolute bottom-3 left-4 font-bold">
+                مشاهده بیشتر</span
+              >
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <div class="article">
+              <div class="pt-2 relative">
+                <img
+                  src="../assets//img/services/Rectangle 14.png"
+                  alt="danger"
+                  class="w-[272px] mx-auto object-cover" />
+                <div class="image__container-box bg-[#FFC700]">
+                  تغذیه در کودکان
+                </div>
+              </div>
+              <p class="text-[16px] mb-12 max-w-[223px] mx-auto">
+                ست تی شرت آستین کوتاه و شلوارک بچگانه سپیدپوش مدل ...
+              </p>
+              <span class="text-[12px] absolute bottom-3 left-4 font-bold">
+                مشاهده بیشتر</span
+              >
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <div class="article">
+              <div class="pt-2 relative">
+                <img
+                  src="../assets//img/services/Rectangle 14.png"
+                  alt="danger"
+                  class="w-[272px] mx-auto object-cover" />
+                <div class="image__container-box bg-[#FFC700]">
+                  تغذیه در کودکان
+                </div>
+              </div>
+              <p class="text-[16px] mb-12 max-w-[223px] mx-auto">
+                ست تی شرت آستین کوتاه و شلوارک بچگانه سپیدپوش مدل ...
+              </p>
+              <span class="text-[12px] absolute bottom-3 left-4 font-bold">
+                مشاهده بیشتر</span
+              >
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <div class="article">
+              <div class="pt-2 relative">
+                <img
+                  src="../assets//img/services/Rectangle 14.png"
+                  alt="danger"
+                  class="w-[272px] mx-auto object-cover" />
+                <div class="image__container-box bg-[#FFC700]">
+                  تغذیه در کودکان
+                </div>
+              </div>
+              <p class="text-[16px] mb-12 max-w-[223px] mx-auto">
+                ست تی شرت آستین کوتاه و شلوارک بچگانه سپیدپوش مدل ...
+              </p>
+              <span class="text-[12px] absolute bottom-3 left-4 font-bold">
+                مشاهده بیشتر</span
+              >
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <div class="article">
+              <div class="pt-2 relative">
+                <img
+                  src="../assets//img/services/Rectangle 14.png"
+                  alt="danger"
+                  class="w-[272px] mx-auto object-cover" />
+                <div class="image__container-box bg-[#FFC700]">
+                  تغذیه در کودکان
+                </div>
+              </div>
+              <p class="text-[16px] mb-12 max-w-[223px] mx-auto">
+                ست تی شرت آستین کوتاه و شلوارک بچگانه سپیدپوش مدل ...
+              </p>
+              <span class="text-[12px] absolute bottom-3 left-4 font-bold">
+                مشاهده بیشتر</span
+              >
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <div class="article">
+              <div class="pt-2 relative">
+                <img
+                  src="../assets//img/services/Rectangle 14.png"
+                  alt="danger"
+                  class="w-[272px] mx-auto object-cover" />
+                <div class="image__container-box bg-[#FFC700]">
+                  تغذیه در کودکان
+                </div>
+              </div>
+              <p class="text-[16px] mb-12 max-w-[223px] mx-auto">
+                ست تی شرت آستین کوتاه و شلوارک بچگانه سپیدپوش مدل ...
+              </p>
+              <span class="text-[12px] absolute bottom-3 left-4 font-bold">
+                مشاهده بیشتر</span
+              >
+            </div>
+          </div>
+        </div>
+
+        <div class="slider-controler">
+          <div class="swiper-pagination"></div>
+          <!-- If we need navigation buttons -->
+          <div class="swiper-button-prev"></div>
+          <div class="swiper-button-next"></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="bg-[#14C1A3] my-8">
+      <div class="container py-2">
+        <div class="w-full mx-auto my-10 flex justify-center items-center">
+          <div class="grow h-[2px] bg-[#fff]"></div>
+          <h2 class="text-3xl font-bold mx-3 text-[#fff]">اخبار</h2>
+          <div class="grow h-[2px] bg-[#fff]"></div>
+        </div>
+
+        <div class="flex gap-10 flex-col lg:flex-row justify-between items-center">
+          <div class="w-full lg:w-1/2">
+            <span class="text-white mb-4 inline-block">متن مورد نظر شما</span>
+            <h4 class="text-white text-3xl mb-3">ایجاد انگیزه در کودکان زیر 5 سال</h4>
+            <div class="swiper rounded-md mySwiper2 .thumbs mb-4">
+              <div class="swiper-wrapper rounded-md">
+                <div class="swiper-slide h-[380px]">
+                  <img class="rounded-md" src="../assets/img/slider/s1.png" />
+                </div>
+                <div class="swiper-slide h-[380px]">
+                  <img class="rounded-md" src="../assets/img/slider/s2.png" />
+                </div>
+                <div class="swiper-slide h-[380px]">
+                  <img class="rounded-md" src="../assets/img/slider/s3.png" />
+                </div>
+                <div class="swiper-slide h-[380px]">
+                  <img class="rounded-md" src="../assets/img/slider/s4.png" />
+                </div>
+              </div>
+            </div>
+            <span class="text-white mb-4 inline-block">متن مورد نظر شما</span>
+            <div thumbsSlider="" class="swiper mySwiper3 .thumbs mb-4">
+              <div class="swiper-wrapper rounded">
+                <div class="swiper-slide flex flex-col gap-2">
+                  <img class="rounded" src="../assets/img/slider/s1.png" />
+                  <h6 class="text-[16px]">ایجاد انگیزه در کودکان زیر 5 سال</h6>
+                </div>
+                <div class="swiper-slide flex flex-col gap-2">
+                  <img class="rounded" src="../assets/img/slider/s2.png" />
+                  <h6 class="text-[16px]">ایجاد انگیزه در کودکان زیر 5 سال</h6>
+                </div>
+                <div class="swiper-slide flex flex-col gap-2">
+                  <img class="rounded" src="../assets/img/slider/s3.png" />
+                  <h6 class="text-[16px]">ایجاد انگیزه در کودکان زیر 5 سال</h6>
+                </div>
+                <div class="swiper-slide flex flex-col gap-2">
+                  <img class="rounded" src="../assets/img/slider/s4.png" />
+                  <h6 class="text-[16px]">ایجاد انگیزه در کودکان زیر 5 سال</h6>
+                </div>
+
+                <div class="swiper-button-next"></div>
+                <div class="swiper-button-prev"></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="flex flex-col gap-16">
+            <div class="">
+              <h3 class="text-white text-4xl mb-4">دلبستگی در کودکان</h3>
+              <p class="leading-8 font-semibold">
+                دلبستگی در کودکان به‌خصوص نوزادان کمک می‌کند تا احساسات منفی خود
+                را در مواقع استرسلبستگی، یک نقطه عطف رشد در زندگی کودک و یک
+                موضوع مهم باقی می‌ماند. در بزرگسالی، بازنمایی‌های دلبستگی دیده
+                می‌شود و ممکن است مشکلاتی را به همراه داشته باشد.
+              </p>
+            </div>
+            <div class="">
+              <h3 class="text-white text-4xl mb-4">دلبستگی در کودکان</h3>
+              <p class="leading-8 font-semibold">
+                دلبستگی در کودکان به‌خصوص نوزادان کمک می‌کند تا احساسات منفی خود
+                را در مواقع استرسلبستگی، یک نقطه عطف رشد در زندگی کودک و یک
+                موضوع مهم باقی می‌ماند. در بزرگسالی، بازنمایی‌های دلبستگی دیده
+                می‌شود و ممکن است مشکلاتی را به همراه داشته باشد.
+              </p>
+            </div>
+            <div class="">
+              <h3 class="text-white text-4xl mb-4">دلبستگی در کودکان</h3>
+              <p class="leading-8 font-semibold">
+                دلبستگی در کودکان به‌خصوص نوزادان کمک می‌کند تا احساسات منفی خود
+                را در مواقع استرسلبستگی، یک نقطه عطف رشد در زندگی کودک و یک
+                موضوع مهم باقی می‌ماند. در بزرگسالی، بازنمایی‌های دلبستگی دیده
+                می‌شود و ممکن است مشکلاتی را به همراه داشته باشد.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="relative bg-gray-500 sm:bg-children bg-cover h-[360px]">
+      <div
+        class="w-full flex justify-between items-center absolute sm:hidden top-10">
+        <div class="w-[2000px] h-[1px] bg-white"></div>
+        <div
+          class="text-[34px] w-[150px] absolute m-auto left-0 right-0 flex justify-center text-white bg-gray-500">
+          خدمات
+        </div>
+        <div class="w-[2000px] h-[1px] bg-white"></div>
+      </div>
+      <div class="subscription-section">
+        <div>
+          <h4 class="text-[16px] sm:text-[24px]">
+            برای دریافت اشتراک اینجا کلیک کنید
+          </h4>
+          <p class="text-[12px] mt-4">
+            متن مورد نظر شما اینجا تایپ شود ومتن شما ایمتن مورد نظر شما اینجا
+            تایپ شود ومتن شما ایمتن مورد نظر شما اینجا تایپ شود ومتن شما ای
+          </p>
+        </div>
+        <div class="flex justify-end gap-4 mt-3">
+          <div class="subscription-box bg-[#FF4F4F]">دریافت خدمات</div>
+          <div class="subscription-box bg-[#01D4FF]">دریافت اشتراک</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-section">
+      <div class="text-white w-[376px]">
+        <div class="accordian">
+          <div class="flex justify-between">
+            <h5 class="text-[24px]">راه های ارتباط با ما</h5>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="16px"
+              height="16"
+              fill="currentColor"
+              class="accordian-svg"
+              viewBox="0 0 16 16">
+              <path
+                fill-rule="evenodd"
+                d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z" />
+            </svg>
+          </div>
+          <div class="bg-white h-[1px] mt-3 white-footer-line"></div>
+          <ul class="accordian-content gap-3 mt-3 text-[16px]">
+            <li class="mt-2">مجلات</li>
+            <li class="mt-2">مسابقات</li>
+            <li class="mt-2">آزمون ها</li>
+            <li class="mt-2">فروشگاه</li>
+            <li class="mt-2">اخبار</li>
+            <li class="mt-2">تماس با ما</li>
+            <li class="mt-2">ارتباط با ما</li>
+          </ul>
+        </div>
+      </div>
+      <div class="text-white w-[376px]">
+        <div class="accordian">
+          <div class="flex justify-between">
+            <h5 class="text-[24px]">راه های ارتباط با ما</h5>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="16px"
+              height="16"
+              fill="currentColor"
+              class="accordian-svg"
+              viewBox="0 0 16 16">
+              <path
+                fill-rule="evenodd"
+                d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z" />
+            </svg>
+          </div>
+          <div class="bg-white h-[1px] mt-3 white-footer-line"></div>
+          <ul class="accordian-content gap-3 mt-3 text-[16px]">
+            <li class="mt-2">مجلات</li>
+            <li class="mt-2">مسابقات</li>
+            <li class="mt-2">آزمون ها</li>
+            <li class="mt-2">فروشگاه</li>
+            <li class="mt-2">اخبار</li>
+            <li class="mt-2">تماس با ما</li>
+            <li class="mt-2">ارتباط با ما</li>
+          </ul>
+        </div>
+      </div>
+      <div class="text-white w-[376px]">
+        <div class="accordian">
+          <div class="flex justify-between">
+            <h5 class="text-[24px]">راه های ارتباط با ما</h5>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="16px"
+              height="16"
+              fill="currentColor"
+              class="accordian-svg"
+              viewBox="0 0 16 16">
+              <path
+                fill-rule="evenodd"
+                d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z" />
+            </svg>
+          </div>
+          <div class="bg-white h-[1px] mt-3 white-footer-line"></div>
+          <div class="accordian-content mt-10">
+            <h6 class="text-[16px] text-white">اپلیکیشن مارا دریافت کنید</h6>
+            <div class="flex gap-1 flex-wrap mt-4">
+              <img
+                src="../assets/img/contacticons/Rectangle 63.svg"
+                alt="Rectangle 63"
+                class="w-[130px] sm:w-[186px]" />
+              <img
+                src="../assets/img/contacticons/Rectangle 64.svg"
+                alt="Rectangle 64"
+                class="w-[130px] sm:w-[186px]" />
+            </div>
+            <p class="text-[16px] text-white mt-6">
+              مارا در شبکه های اجتماعی دنبال کنید
+            </p>
+            <div class="flex flex-wrap gap-4 mt-6">
+              <img
+                class="w-[30px] h-[30px] sm:w-[49px] sm:h-[49px]"
+                src="../assets/img/contacticons/Rectangle 57.svg"
+                alt="Rectangle 57" />
+              <img
+                class="w-[30px] h-[30px] sm:w-[49px] sm:h-[49px]"
+                src="../assets/img/contacticons/Rectangle 58.svg"
+                alt="Rectangle 57" />
+              <img
+                class="w-[30px] h-[30px] sm:w-[49px] sm:h-[49px]"
+                src="../assets/img/contacticons/Rectangle 59.svg"
+                alt="Rectangle 57" />
+              <img
+                class="w-[30px] h-[30px] sm:w-[49px] sm:h-[49px]"
+                src="../assets/img/contacticons/Rectangle 60.svg"
+                alt="Rectangle 57" />
+              <img
+                class="w-[30px] h-[30px] sm:w-[49px] sm:h-[49px]"
+                src="../assets/img/contacticons/Rectangle 61.svg"
+                alt="Rectangle 57" />
+              <img
+                class="w-[30px] h-[30px] sm:w-[49px] sm:h-[49px]"
+                src="../assets/img/contacticons/Rectangle 62.svg"
+                alt="Rectangle 57" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div
+      class="w-full h-[84px] bg-[#04133A] flex justify-center items-center text-white p-3">
+      تمامی حقوق این سایت متعلق به وب سایت کودک من است
+    </div>
+
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+    <script src="./app.js"></script>
+  </body>
+</html>
